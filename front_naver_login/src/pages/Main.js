@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import NaverLogin from "react-login-by-naver";
 import axios from "axios";
 
-const Main = () => {
+function Main() {
   const history = useHistory(); // 라우팅을 위한 히스토리 객체
   //네이버로그인성공시 호출되는 함수
   const responseLogin = (res, type) => {
@@ -14,7 +14,7 @@ const Main = () => {
 
     let form = new FormData();
     form.append("id", id);
-    // form.append("password", res.getPassword());
+    // form.append("password", password);
     form.append("name", name);
     form.append("email", email);
 
@@ -36,6 +36,6 @@ const Main = () => {
       onFailure={() => console.log("naver login fail")}
     />
   );
-};
+}
 
 export default Main;
